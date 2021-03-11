@@ -1,9 +1,19 @@
-import logo from './logo.svg';
+import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import { useState } from 'react';
 import './App.css';
+import logo from './logo.svg';
 
 function App() {
+  const [likeColor, setLikeColor] = useState('');
+  const handleLike = () =>{
+      const color = likeColor ? '' : 'primary';
+      setLikeColor(color);
+  }
   return (
     <div className="App">
+      <AccessAlarmIcon></AccessAlarmIcon>
+      <ThumbUpIcon onClick={handleLike} color={likeColor}></ThumbUpIcon>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
